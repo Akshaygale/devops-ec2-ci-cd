@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git credentialsId: 'github-token',
-                    url: 'https://github.com/YOUR_USERNAME/devops-ec2-ci-cd.git',
+                    url: 'https://github.com/Akshaygale/devops-ec2-ci-cd.git',
                     branch: 'main'
             }
         }
