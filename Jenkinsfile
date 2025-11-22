@@ -1,10 +1,11 @@
+// #pipelinemahe by me #
 pipeline {
     agent any
 
     environment {
         AWS_REGION = 'ap-south-1'
-        AWS_ACCESS_KEY_ID     = credentials('aws-creds')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-creds')
+        AWS_ACCESS_KEY_ID     = credentials('aws-access-key')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-access-key')
     }
 
     stages {
