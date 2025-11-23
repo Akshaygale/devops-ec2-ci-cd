@@ -44,7 +44,9 @@ pipeline {
         stage('Deploy Frontend') {
             steps {
                 dir('frontend') {
-                    sh 'python3 -m http.server 8000 &'
+                    // Run frontend server safely in background
+                    sh 'nohup python3 -m http.server 8000 > frontend.log 2>&1 &'
+                    sh 'echo "Frontend server started on port 8000"'
                 }
             }
         }
@@ -52,10 +54,21 @@ pipeline {
         stage('Deploy Backend') {
             steps {
                 dir('backend') {
-                    sh 'python3 app.py &'
+                    // Run backend app safely in background
+                    sh 'nohup python3 app.py > backend.log 2>&1 &'
+                    sh 'echo "Backend app started"'
                 }
             }
         }
 
     } // end of stages
-} // end of pipeline
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed! Check logs for details.'
+        }
+    }
+}
