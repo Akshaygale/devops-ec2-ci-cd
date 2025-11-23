@@ -3,9 +3,10 @@ variable "project_name" {
 }
 
 variable "instance_type" {
-  default = "t2.micro"
+  default = "t3.micro"
 }
 
 variable "key_name" {
   default = "jenkins-key"
 }
+
