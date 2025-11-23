@@ -53,3 +53,9 @@ pipeline {
             steps {
                 dir('backend') {
                     sh 'python3 app.py &'
+                }
+            }
+        }
+
+    } // end of stages
+} // end of pipeline
