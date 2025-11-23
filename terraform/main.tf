@@ -51,7 +51,7 @@ EOF
 }
 
 resource "aws_instance" "backend" {
-  ami           = "ami-03bb6d83c60fc5f7c"
+  ami           = "ami-05561ceba311a6c7b"
   instance_type = var.instance_type
   key_name      = var.key_name
   security_groups = [aws_security_group.project_sg.name]
@@ -76,5 +76,6 @@ EOF
     Name = "backend-server"
   }
 }
+
 
 
