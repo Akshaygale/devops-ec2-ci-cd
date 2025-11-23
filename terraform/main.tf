@@ -32,7 +32,7 @@ resource "aws_security_group" "project_sg" {
 }
 
 resource "aws_instance" "frontend" {
-  ami           = "ami-05561ceba311a6c7b"   # Amazon Linux Mumbai
+  ami           = "ami-0d176f79571d18a8f"   # Amazon Linux Mumbai
   instance_type = var.instance_type
   key_name      = var.key_name
   security_groups = [aws_security_group.project_sg.name]
@@ -51,7 +51,7 @@ EOF
 }
 
 resource "aws_instance" "backend" {
-  ami           = "ami-05561ceba311a6c7b"
+  ami           = "ami-0d176f79571d18a8f"
   instance_type = var.instance_type
   key_name      = var.key_name
   security_groups = [aws_security_group.project_sg.name]
@@ -76,6 +76,7 @@ EOF
     Name = "backend-server"
   }
 }
+
 
 
 
