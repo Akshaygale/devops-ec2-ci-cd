@@ -3,10 +3,11 @@ variable "project_name" {
 }
 
 variable "instance_type" {
-  default = "t3.micro"
+  default = "c7i-flex.large"
 }
 
 variable "key_name" {
   default = "jenkins-key"
 }
+
 
